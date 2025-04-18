@@ -14,7 +14,7 @@ import plotly.graph_objs as go
 
 server = Flask(__name__)
 api = Api(server)
-cors = CORS(server)
+CORS(server, resources={r"/*": {"origins": "*"}})
 
 app_dash = Dash(__name__, server=server, url_base_pathname="/dashboard/")
 
