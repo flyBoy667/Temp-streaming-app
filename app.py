@@ -22,7 +22,8 @@ class Temperatures(Resource):
         return {"message": "posting"}
 
 
-api.add_resource(Temperatures, '/temp')
+api.add_resource(Temperatures, "/temp")
+
 
 @app.route("/")
 def index():
