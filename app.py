@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
+
 from flask_restful import Api, Resource, reqparse
 from streamz.dataframe import DataFrame
 from streamz import Stream
@@ -12,6 +14,7 @@ import plotly.graph_objs as go
 
 server = Flask(__name__)
 api = Api(server)
+cors = CORS(server)
 
 app_dash = Dash(__name__, server=server, url_base_pathname="/dashboard/")
 
